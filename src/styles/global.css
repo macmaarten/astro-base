@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+@custom-variant dark (&:where(.dark, .dark *));
 
 /* Accessibility: Skip to content link */
 .sr-only {
@@ -23,4 +24,8 @@
   overflow: visible;
   clip: auto;
   white-space: normal;
+}
+
+html {
+  color-scheme: light dark;
 }

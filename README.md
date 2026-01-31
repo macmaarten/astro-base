@@ -147,6 +147,16 @@ Sass is installed and ready to use. You can use Sass in component `<style>` bloc
 
 See `src/components/SassExample.astro` for a complete example.
 
+### IMPORTANT NOTE on Dark Mode (Tailwind v4)
+
+This project uses class-based dark mode.
+
+Because Tailwind CSS v4 is CSS-first, the following line is required
+in `src/styles/global.css` for `dark:` utilities to work:
+
+```css
+@custom-variant dark (&:where(.dark, .dark *));
+
 ## 🎭 Components
 
 ### ScrollReveal

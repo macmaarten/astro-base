@@ -54,21 +54,31 @@ const robotsContent = [
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		
+
+		<!-- Add dark theme initialization (no flash, system-aware) -->
+		<script is:inline>
+			(() => {
+				const stored = localStorage.getItem("theme");
+				const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+				const theme = stored ?? (prefersDark ? "dark" : "light");
+				document.documentElement.classList.toggle("dark", theme === "dark");
+			})();
+		</script>
+
 		<!-- Resource Hints -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-		
+
 		<!-- Preload Critical Resources -->
 		<link rel="preload" href="/favicon.svg" as="image" type="image/svg+xml" />
-		
+
 		<!-- Primary Meta Tags -->
 		<title>{title}</title>
 		<meta name="title" content={title} />
 		<meta name="description" content={description} />
 		<meta name="robots" content={robotsContent} />
 		<link rel="canonical" href={siteURL.href} />
-		
+
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content={ogType} />
 		<meta property="og:url" content={siteURL.href} />
@@ -76,7 +86,7 @@ const robotsContent = [
 		<meta property="og:description" content={ogDescription} />
 		<meta property="og:image" content={fullOgImage} />
 		<meta property="og:site_name" content={SITE.title} />
-		
+
 		<!-- Twitter -->
 		<meta name="twitter:card" content={twitterCard} />
 		<meta name="twitter:url" content={siteURL.href} />
@@ -84,7 +94,7 @@ const robotsContent = [
 		<meta name="twitter:description" content={twitterDescription} />
 		<meta name="twitter:image" content={fullTwitterImage} />
 	</head>
-	<body class="min-h-screen bg-gray-50">
+	<body class="min-h-screen bg-gray-50 dark:bg-gray-900 dark:text-gray-100">
 		<a
 			href="#main-content"
 			class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-black focus:text-white focus:rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black"
