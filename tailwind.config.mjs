@@ -4,6 +4,9 @@ import typography from "@tailwindcss/typography";
 export default {
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['"Noto Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+      },
       colors: {
         dark: {
           base: "rgb(14, 26, 53)",    // main page background

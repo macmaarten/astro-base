@@ -1,0 +1,6 @@
+<svg width="500" height="500" xmlns="http://www.w3.org/2000/svg">
+	<path d="M 100 0  h 200 v 100 h -100 v  100 h -100 Z" fill="#54ff60" />
+	<path d="M 300 100 h 200 v 200 h -100 v -100 h -100 Z" fill="#31ca65" />
+	<path d="M 300 300 h 100 v 200 h -200 v -100 h  100 Z" fill="#284fdf" />
+	<path d="M 0  200 h 100 v 100 h  100 v  100 h -200 Z" fill="#0188fa" />
+</svg>
